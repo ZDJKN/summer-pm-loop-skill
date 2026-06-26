@@ -1,4 +1,4 @@
-# 安装与依赖 · xiaoti-pm PM loop skill
+# 安装与依赖 · summer-pm-loop-skill PM loop skill
 
 > 本文档面向**接手这个 skill 的人或 AI agent**。读完你就知道：跑起来最少需要什么、想要哪个能力补哪个工具、缺了怎么优雅降级。
 > 设计原则：**核心零依赖，增强按需装。** 别被长清单吓到——Tier 0 就能用。
@@ -8,7 +8,7 @@
 ## 0. 30 秒最小可运行
 
 ```
-1. 把整个 xiaoti-pm/ 文件夹放进  ~/.claude/skills/
+1. 把整个 summer-pm-loop-skill/ 文件夹放进  ~/.claude/skills/
 2. 用一个有「读写本地文件」能力的 agent 环境（Claude Code / Claude Agent SDK / 任何支持 Agent Skills 的 harness）
 3. 说出场景（"帮我拆这个 brief" / "客户不回怎么办" / "盘一下这个项目"）即触发
 ```
