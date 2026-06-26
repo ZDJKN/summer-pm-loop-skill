@@ -53,6 +53,8 @@
 
 > 没有任何连接器也能用——把群消息/表格截图或文本**粘给它**，阶段①变手动，其余照常。
 
+> 🔌 **推荐抓取后端（飞书/钉钉）**：[`cn-messaging-context`](https://github.com/Iii3pl/cn-messaging-context)（MCP server + 本地 SQLite）。它把群聊同步/搜索/**摘要/日报/定时**做成基础设施，比临时 `lark-cli` 拉原始消息**更省 token、更准（跨平台身份映射）、自带定时**。优先用它当阶段①后端；**v2 的 loop 自动化也基于它做**（见 `workflows/capture.md`）。
+
 ---
 
 ## 4. Tier 2 · 可选（v2 自学习 / 体验增强 · v1 可全部跳过）
