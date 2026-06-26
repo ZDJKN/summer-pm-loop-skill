@@ -43,7 +43,12 @@
 2. 新开一个 Claude Code 会话，确认技能列表里能看到它。
 3. 直接说场景（见上表）即可触发。
 
+> 路径按你的 agent 来：Claude Code 放 `~/.claude/skills/`，Codex 放 `~/.codex/skills/`。
 > 跑起来最少只需「能读写文件的 agent + 本包」，核心动作零外部依赖。想要自动抓群聊/表格再按 [`INSTALL.md`](INSTALL.md) 装对应连接器。
+
+### 首次使用 · 环境自检（建议先跑）
+
+第一次用 / 换人接手时，对它说「**首次使用 / 怎么准备**」，它会按 [`workflows/preflight.md`](workflows/preflight.md) **自检环境 → 探测已装应用（Obsidian / lark-cli / cron…）→ 给你一份「就绪报告」+ 缺啥补啥的命令**。其中可选工具（如 Obsidian）会**先问你再帮你装**（`brew install --cask obsidian` 之类），不静默安装。核心知识库零依赖，不装这些也能用。
 
 ---
 
@@ -68,6 +73,7 @@
 
 **还没做（路线）：**
 - ⬜ **全自动 loop**：现在是「你喊它才跑」的半自动；**定时、无人值守的自动抓取 + 日报（阶段③滚动）还没做** → 计划基于 [cn-messaging-context](https://github.com/Iii3pl/cn-messaging-context)（群聊抓取/摘要/定时后端）+ 定时器实现。
+  - **为什么先不做全自动**：① 自动化是放大器——先得让被放大的「判断质量」稳（知识库夯实 + 实战验证），否则自动发错日报、误判健康灯，比不发更糟；② 抓取/定时不自己造轮子，等专用后端验证稳了再接，更省也更准。路线是**先把判断做扎实 → 再上自动化**，不是反过来。
 - ⬜ **自学习**：把外部职场内容蒸馏进知识库（带闸门，只收可执行动作）。
 
 ---
@@ -88,7 +94,8 @@ summer-pm-loop-skill/
 ├── INSTALL.md        # 工具依赖 + 接手者/agent 自检
 ├── knowledge/        # 6 模块 PM 知识库（真理来源，自包含）
 ├── workflows/        # preflight 环境自检 + capture 抓取（决策树）
-├── templates/        # brief 拆解 / 7维校验 等可填模板
+├── templates/        # brief拆解 / 7维校验 / 会议转结论 等可填模板
+├── scripts/          # deterministic 兜底：create_project.py 建档 · maoli_calc.py 毛利测算
 └── projects/_TEMPLATE/   # 空白「项目动态知识包」（真实档案只放本地）
 ```
 
