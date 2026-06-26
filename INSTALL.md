@@ -53,7 +53,10 @@
 
 > 没有任何连接器也能用——把群消息/表格截图或文本**粘给它**，阶段①变手动，其余照常。
 
-> 🔌 **推荐抓取后端（飞书/钉钉）**：[`cn-messaging-context`](https://github.com/Iii3pl/cn-messaging-context)（MCP server + 本地 SQLite）。它把群聊同步/搜索/**摘要/日报/定时**做成基础设施，比临时 `lark-cli` 拉原始消息**更省 token、更准（跨平台身份映射）、自带定时**。优先用它当阶段①后端；**v2 的 loop 自动化也基于它做**（见 `workflows/capture.md`）。
+> 🔀 **抓取两条路（开局二选一，见 `workflows/capture.md`）**：
+> - 🅰 **轻路径（默认）**：飞书 `lark-cli` 扫码登录 / 钉钉 `dws`，零部署，**同事登录就能用**；有 cron 就定时，没有就半自动。
+> - 🅱 **cn 路径（按需升级）**：装 [`cn-messaging-context`](https://github.com/Iii3pl/cn-messaging-context)（后台持续抓+摘要+定时）。**只在要抓微信 / 要无人值守全自动 / 要团队共享一个信息库时才上**，部署较重（配各平台 webhook+凭证）。
+> 不论哪条，抓回的信息**统一用标签+双链**存进项目档案。判断层零依赖，先 🅰、撞到墙再 🅱。
 
 ---
 

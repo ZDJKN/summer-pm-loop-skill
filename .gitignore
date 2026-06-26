@@ -3,3 +3,6 @@ projects/*
 !projects/_TEMPLATE/
 !projects/_TEMPLATE/**
 .DS_Store
+!projects/_DEMO/
+!projects/_DEMO/**
+projects/_DEMO/.loop/
